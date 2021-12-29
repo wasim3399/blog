@@ -26,6 +26,7 @@ class HomeController extends Controller
 //        test commit by wasim
 //        second commit
 //        third commit
+//        new test
         return view('home');
     }
 }
