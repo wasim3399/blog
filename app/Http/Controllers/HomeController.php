@@ -23,15 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        test commit by wasim
-//        second commit
-//        third commit
-//        new test
-//        another test
-//        final commit
-//        testing
-//        new testing
-//        preventing master commit
         return view('home');
     }
 }
