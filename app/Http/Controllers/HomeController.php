@@ -30,6 +30,7 @@ class HomeController extends Controller
 //        another test
 //        final commit
 //        testing
+//        new testing
         return view('home');
     }
 }
