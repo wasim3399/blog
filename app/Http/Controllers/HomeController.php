@@ -24,6 +24,7 @@ class HomeController extends Controller
     public function index()
     {
 //        test commit by wasim
+//        second commit
         return view('home');
     }
 }
