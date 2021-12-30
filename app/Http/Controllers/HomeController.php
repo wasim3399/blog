@@ -23,8 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        first commitsss
-//        first s
+//        remove extra commits
         return view('home');
     }
 }
