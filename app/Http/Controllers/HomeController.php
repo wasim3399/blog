@@ -3,19 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Notifications\MyFirstNotification;
+use App\RangeCrypto;
+use App\Repositories\Repository;
 use App\User;
 use Illuminate\Http\Request;
 use Notification;
 
+
 class HomeController extends Controller
 {
+    protected $model;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(RangeCrypto $rangeCrypto)
     {
+        $this->model = new Repository($rangeCrypto);
         $this->middleware('auth');
     }
 
@@ -234,5 +239,12 @@ class HomeController extends Controller
             \App\Models\ErrorLog::insert(['error_message' => $e->getMessage(), 'line_number' => $e->getLine(), 'method' => 'calculateVolumes']);
             return response()->json(['error' => "true", 'message' => "Error Occured"]);
         }
+    }
+
+    public function repo()
+    {
+        $data = ['name' => 'wasim'];
+        $repo = $this->model->test($data);
+        dd($repo);
     }
 }
